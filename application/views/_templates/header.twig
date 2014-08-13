@@ -1,0 +1,10 @@
+<div class="content nav">
+  <div class="mobile menubar"><img src="img/menu-mobile.png" onClick="toggleMenuBar();"></div>
+  <div class="logo"><a href="/"><img src="img/logo.png"></a></div>
+  <ul id="nav">
+    <li{% if page=='blog' %} class="selected"{% endif %}><a href="blog/">Blog</a></li>
+    <li{% if page=='projects' %} class="selected"{% endif %}><a href="projects/">Projects</a></li>
+    <li{% if page=='about' %} class="selected"{% endif %}><a href="about/">About</a></li>
+    <li{% if page=='contact' %} class="selected"{% endif %}><a href="contact/">Contact</a></li>
+  </ul>
+</div>
