@@ -10,63 +10,23 @@ class Home extends Controller
     ));
   }
   
-  public function page1()
+  public function about()
   {
-    $Item = new ItemModel();
-    $itemsList = $Item->selectItemsList();
+    $age = $this->getAge();
     
-    $this->render('page1', array(
-      'metaTitle' => 'Page 1',
-      'metaDescription' => 'Thank you for using php-mvc framework by mosufy',
-      'page' => 'page1',
-      'itemsList' => $itemsList
+    $this->render('about', array(
+      'metaTitle' => 'About Mohd Sufiyan',
+      'metaDescription' => 'Also known as Mosufy, aged '.$age.', Technopreneur, Software Engineer, UI/UX believer, PHP Developer.',
+      'page' => 'about',
+      'age' => $age
     ));
   }
-	
-  public function page2()
+  
+  private function getAge()
   {
-    $this->render('page2', array(
-      'metaTitle' => 'Page 2',
-      'metaDescription' => 'Thank you for using php-mvc framework by mosufy',
-      'page' => 'page2'
-    ));
-  }
-	
-  public function page3()
-  {		
-    $this->render('page3', array(
-      'metaTitle' => 'Page 3',
-      'metaDescription' => 'Thank you for using php-mvc framework by mosufy',
-      'page' => 'page3',
-    ));
-  }
-	
-  public function page4()
-  {		
-    $this->render('page4', array(
-      'metaTitle' => 'Page 4',
-      'metaDescription' => 'Thank you for using php-mvc framework by mosufy',
-      'page' => 'page4',
-    ));
-  }
-	
-  /**
-  * PAGE: item
-  * This method handles what happens when you move to http://yourproject/{item}
-  * This method was received from index() to check if the {item} really exists
-  * Only then should you display the item. Otherwise, mark it as an error page
-  */
-  private function displayItem($item)
-  {
-    $Item = new ItemModel();
-    $itemData = $Item->selectItemData($item);
-    
-    if (!$itemData) $this->displayError404();
-    
-    $this->render('item', array(
-      'metaTitle' => 'Hello World',
-      'metaDescription' => 'Thank you for using php-mvc framework by mosufy',
-      'itemData' => $itemData
-    ));
+    $datenow = new DateTime();
+    $bdate = new DateTime('1987-01-23');
+    $interval = $datenow->diff($bdate);
+    return $interval->y;
   }
 }

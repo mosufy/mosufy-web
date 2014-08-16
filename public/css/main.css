@@ -17,7 +17,7 @@ h1 {
   font-size: 56px;
   font-weight: 300;
   text-align: center;
-  color: #2b3847;
+  color: #FFF;
 }
 h2 {
   font-size: 21px;
@@ -123,6 +123,13 @@ input.error {
   position: relative;
   clear: both;
 }
+.content-squeeze {
+  width:600px;
+  margin:0 auto;
+}
+.content-squeeze h1 {
+  border-bottom:1px dashed #FFF;
+}
 
 .content.pageError {
   text-align: center;
@@ -158,6 +165,7 @@ input.error {
   font-weight: 300;
   font-size: 18px;
   line-height: none;
+  padding-left:10px;
 }
 .nav li a {
   color:inherit;
@@ -189,6 +197,25 @@ input.error {
   margin-top:30px;
 }
 
+.colBoxes ul, .colBoxes li {
+  margin: 0;
+  padding: 0;
+}
+.colBoxes li {
+  float: left;
+  list-style-type: none;
+  width: 25%;
+}
+.colBoxes li .colBox {
+  margin-right: 20px;
+}
+.colBoxes li:last-child .colBox {
+  margin-right: 0;
+}
+.colBoxes li .colBox h2 {
+  text-align:left;
+}
+
 .push {
   clear: both;
 }
@@ -202,13 +229,16 @@ input.error {
   margin:0;
 }
 .tags {
-  width:500px;
+  width:100%;
   margin:0 auto;
 }
 .tags li {
   display:inline;
   font-size:14px;
   white-space:nowrap;
+  margin:10px 0;
+  margin-right:5px;
+  width:auto;
 }
 .tags li a {
   border:1px solid #B4B4B4;
@@ -240,12 +270,24 @@ input.error {
     margin-left: 20px;
     margin-right: 20px;
   }
+  .content-squeeze {
+    width:100%;
+  }
 }
 
 /* Anything smaller than iPad ----------- */
 @media only screen and (max-width : 979px) {
   /* STYLES GO HERE */
-  
+  .colBoxes li {
+    width: 50%;
+  }
+  .colBoxes li:nth-child(odd) {
+    clear:both;
+  }
+  .colBoxes li .colBox li {
+    width: auto !important;
+    clear:none;
+  }
 }
 
 /* Anything smaller than Smartphones ----------- */
@@ -320,6 +362,7 @@ input.error {
   }
   .nav li {
     width: 100%;
+    padding:0;
   }
   .nav li a {
     padding:10px 20px;
@@ -330,6 +373,13 @@ input.error {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  
+  .colBoxes li {
+    width: 100%;
+  }
+  .colBoxes li .colBox {
+    margin:0;
   }
 }
 
