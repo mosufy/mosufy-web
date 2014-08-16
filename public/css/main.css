@@ -4,7 +4,7 @@ html, body {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
-  color: #393939;
+  color: #FFF;
 }
 a {
   text-decoration: none;
@@ -14,13 +14,21 @@ a:hover {
   color: inherit;
 }
 h1 {
-  font-size: 56px;
+  font-size:64px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px dashed #475868;
   font-weight: 300;
   text-align: center;
-  color: #2b3847;
+  color: #FFF;
 }
 h2 {
-  font-size: 21px;
+  font-size: 48px;
+}
+h3 {
+  font-size: 28px;
+  margin-bottom:10px;
+  text-align:left;
 }
 input, select, textarea {
   font-family: 'Open Sans', sans-serif;
@@ -81,6 +89,10 @@ input.error {
 }
 #main .content {
   clear: both;
+  text-align: center;
+  color: #fff;
+  padding: 50px 0 50px;
+  font-size:18px;
 }
 #footer {
   position: fixed;
@@ -117,30 +129,11 @@ input.error {
   padding-right:10px;
 }
 
-.content {
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  clear: both;
-}
-
-.content.pageError {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.content.pageError h1 {
-  font-size: 200px;
-  line-height: 0;
-  font-weight: 900;
-  color: #CCCCCC;
-}
-.content.pageError h2 {
-  font-size: 36px;
-}
-
 .logo {
   padding-top:30px;
+  padding-bottom:10px;
 }
+
 .nav ul {
   position: absolute;
   right: 0;
@@ -156,6 +149,7 @@ input.error {
   font-weight: 300;
   font-size: 18px;
   line-height: none;
+  padding-left:10px;
 }
 .nav li a {
   color:inherit;
@@ -169,22 +163,36 @@ input.error {
   border-bottom-right-radius:8px;
 }
 
-.homepage-intro .content {
-  text-align: center;
-  color: #fff;
-  padding: 100px 0 100px;
-  font-size:21px;
+.content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
-.homepage-intro .title {
-  font-size:64px;
-  padding-bottom:10px;
-  border-bottom:1px dashed #475868;
+.content-squeeze {
+  width:600px;
+  margin:100px auto 50px;
 }
-.homepage-intro span {
+.content-squeeze h2 {
+  border-bottom:1px dashed #FFF;
+}
+.content-squeeze ul {
+  margin:0;
+  padding:0;
+  margin-left:20px;
+}
+.content-squeeze ul li {
+  margin-top:20px;
+}
+
+.content.pageError h1 {
+  font-size: 200px;
+  line-height:200px;
+  font-weight: 900;
+  margin:0;
+}
+
+.subTitle {
   font-size:36px;
-}
-.homepage-intro p {
-  margin-top:30px;
 }
 
 .push {
@@ -194,19 +202,66 @@ input.error {
   display: none;
 }
 
+.colBoxes ul, .colBoxes li {
+  margin: 0;
+  padding: 0;
+}
+.colBoxes li {
+  float: left;
+  list-style-type: none;
+  width: 50%;
+}
+.colBoxes li:nth-child(odd) {
+  clear:both;
+}
+.colBoxes li .colBox li {
+  width:auto;
+  clear:none;
+}
+.colBoxes li .colBox h3 a {
+  color:inherit;
+}
+.colBoxes li .colBox h3 a:hover {
+  color: #FFAE00;
+}
+.colBoxes.fourCol li {
+  width: 25%;
+}
+.colBoxes.fourCol li:nth-child(odd) {
+  clear:none;
+}
+.colBoxes.fourCol li .colBox {
+  text-align:left;
+  margin:0 10px;
+}
+.colBoxes.fourCol li .colBox img {
+  box-shadow:0 0 10px 1px #000;
+}
+.colBoxes.fourCol li .colBox img {
+  width:100%;
+}
+.colBoxes.fourCol li:nth-child(5n) {
+  clear:both;
+}
+
 .tags, .tags li {
   list-style-type:none;
   padding:0;
   margin:0;
 }
 .tags {
-  width:500px;
+  width:100%;
   margin:0 auto;
 }
 .tags li {
   display:inline;
   font-size:14px;
   white-space:nowrap;
+  margin:10px 0 !important;
+  margin-right:5px !important;
+  padding-top:0 !important;
+  width:auto;
+  clear:none !important;
 }
 .tags li a {
   border:1px solid #B4B4B4;
@@ -238,12 +293,30 @@ input.error {
     margin-left: 20px;
     margin-right: 20px;
   }
+  .content-squeeze {
+    width:100%;
+  }
 }
 
 /* Anything smaller than iPad ----------- */
 @media only screen and (max-width : 979px) {
   /* STYLES GO HERE */
-  
+  .colBoxes li {
+    width: 50%;
+  }
+  .colBoxes li:nth-child(odd) {
+    clear:both;
+  }
+  .colBoxes li .colBox li {
+    width: auto !important;
+    clear:none;
+  }
+  .colBoxes.fourCol li {
+    width: 50%;
+  }
+  .colBoxes.fourCol li:nth-child(odd) {
+    clear:both;
+  }
 }
 
 /* Anything smaller than Smartphones ----------- */
@@ -252,13 +325,31 @@ input.error {
   .mobile {
     display: block;
   }
+  
+  h1 {
+    font-size:36px;
+  }
+  h2 {
+    font-size:32px;
+  }
+  h3 {
+    font-size:21px;
+  }
   input,  select,  textarea {
     width: 100%;
   }
   
+  #header {
+    position:fixed;
+    top:0;
+    background-color:#131313;
+    z-index:98;
+  }
+  
   #footer {
-    height:130px;
+    height:140px;
     position:relative;
+    margin-top:-140px;
   }
   #footer .content {
     position: relative;
@@ -275,10 +366,41 @@ input.error {
     float:none;
     padding:3px 0;
   }
-
+  #main {
+    padding-bottom: 100px;
+  }
+  
+  #main .content {
+    padding-top:100px;
+  }
+  .content-squeeze {
+    margin:50px auto 20px;
+  }
+  .content.pageError h1 {
+    font-size:150px;
+    line-height:150px;
+  }
   .content.nav {
     margin:0;
   }
+  
+  .menubar {
+    width:50px;
+    float:right;
+    margin-top:20px;
+    margin-right:20px;
+    text-align:right;
+  }
+  .logo {
+    width:200px;
+    overflow-x:hidden;
+    padding-left:20px;
+    padding-top:10px;
+  }
+  .logo img {
+    width:90%;
+  }
+  
   .nav ul {
     display: none;
     width: 100%;
@@ -289,6 +411,7 @@ input.error {
   }
   .nav li {
     width: 100%;
+    padding:0;
   }
   .nav li a {
     padding:10px 20px;
@@ -300,35 +423,34 @@ input.error {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .menubar {
-    width:50px;
-    float:left;
-    margin-top:30px;
-    margin-left:20px;
+  
+  .colBoxes li {
+    width: 100%;
   }
-  .logo {
-    width:auto;
-    overflow-x:hidden;
-    padding-top:10px;
-    text-align:center;
-    margin-right:10px;
+  .colBoxes li .colBox {
+    margin:0;
+  }
+  
+  .subTitle {
+    font-size:21px;
   }
 }
 
 /* Anything smaller than Smartphones (portrait) ----------- */
 @media only screen and (max-width : 360px) {
   /* STYLES GO HERE */
-  #main {
-    padding-bottom:0;
+  .colBoxes.fourCol li {
+    width: 100%;
+    padding-top:40px;
+  }
+  .colBoxes.fourCol li:first-child {
+    padding-top:0;
+  }
+  .colBoxes.fourCol li .colBox {
+    margin:0;
   }
 }
 
 /* Anything smaller than iPhone (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-  .logo {
-    padding-top:15px;
-  }
-  .logo img {
-    width:95%;
-  }
 }
