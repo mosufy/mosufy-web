@@ -15,6 +15,12 @@ class Controller
       'cache' => PATH_VIEW_TWIG_CACHE,
       'auto_reload' => true
     ));
+    
+    // checks if the file exists. If not, display 404
+    if (!is_readable(PATH_VIEWS .'/'. $view . PATH_VIEW_FILE_TYPE)) {
+      header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+      $view = 'error404';
+    }
   
     // render a view while passing the to-be-rendered data
     echo $twig->render($view . PATH_VIEW_FILE_TYPE, $data_array);

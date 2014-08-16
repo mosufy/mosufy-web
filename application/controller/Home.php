@@ -10,6 +10,33 @@ class Home extends Controller
     ));
   }
   
+  public function blog()
+  {    
+    $this->render('blog', array(
+      'metaTitle' => 'Life as a Techie - Mohd Sufiyan',
+      'metaDescription' => 'Chronicles of my life, lessons, tutorials, learnings. Everything web and technology.',
+      'page' => 'blog'
+    ));
+  }
+  
+  public function projects()
+  {    
+    $this->render('projects', array(
+      'metaTitle' => 'My Projects - Mohd Sufiyan',
+      'metaDescription' => 'The projects I have led and developed, published under my own name.',
+      'page' => 'projects'
+    ));
+  }
+  
+  public function contact()
+  {    
+    $this->render('contact', array(
+      'metaTitle' => 'Say Hello - Mohd Sufiyan',
+      'metaDescription' => 'Looking for a developer? Hook me up for your next project.',
+      'page' => 'contact'
+    ));
+  }
+  
   public function about()
   {
     $age = $this->getAge();

@@ -4,7 +4,7 @@ html, body {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
-  color: #393939;
+  color: #FFF;
 }
 a {
   text-decoration: none;
@@ -139,7 +139,6 @@ input.error {
   font-size: 200px;
   line-height: 0;
   font-weight: 900;
-  color: #CCCCCC;
 }
 .content.pageError h2 {
   font-size: 36px;
@@ -197,6 +196,13 @@ input.error {
   margin-top:30px;
 }
 
+.push {
+  clear: both;
+}
+.mobile {
+  display: none;
+}
+
 .colBoxes ul, .colBoxes li {
   margin: 0;
   padding: 0;
@@ -204,23 +210,39 @@ input.error {
 .colBoxes li {
   float: left;
   list-style-type: none;
-  width: 25%;
+  width: 50%;
 }
-.colBoxes li .colBox {
-  margin-right: 20px;
+.colBoxes li:nth-child(odd) {
+  clear:both;
 }
-.colBoxes li:last-child .colBox {
-  margin-right: 0;
+.colBoxes li .colBox li {
+  width:auto;
+  clear:none;
 }
 .colBoxes li .colBox h2 {
   text-align:left;
 }
-
-.push {
-  clear: both;
+.colBoxes li .colBox h2 a {
+  color:inherit;
 }
-.mobile {
-  display: none;
+.colBoxes li .colBox h2 a:hover {
+  color: #FFAE00;
+}
+.colBoxes.fourCol li .colBox {
+  text-align:left;
+  margin-right:10px;
+}
+.colBoxes.fourCol li .colBox img {
+  box-shadow:0 0 10px 1px #000;
+}
+.colBoxes.fourCol li {
+  width: 25%;
+}
+.colBoxes.fourCol li:nth-child(odd) {
+  clear:none;
+}
+.colBoxes.fourCol li img {
+  width: 100%;
 }
 
 .tags, .tags li {
@@ -328,9 +350,15 @@ input.error {
     padding:3px 0;
   }
   #main {
-    padding-bottom: 140px;
+    padding-bottom: 100px;
   }
-
+  
+  #main .content {
+    padding-top:100px;
+  }
+  .content.pageError h1 {
+    font-size:150px;
+  }
   .content.nav {
     margin:0;
   }
@@ -386,7 +414,9 @@ input.error {
 /* Anything smaller than Smartphones (portrait) ----------- */
 @media only screen and (max-width : 360px) {
   /* STYLES GO HERE */
-  
+  .colBoxes.fourCol li {
+    width: 100%;
+  }
 }
 
 /* Anything smaller than iPhone (portrait) ----------- */
