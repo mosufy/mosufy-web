@@ -140,7 +140,9 @@ input.error {
 
 .logo {
   padding-top:30px;
+  padding-bottom:10px;
 }
+
 .nav ul {
   position: absolute;
   right: 0;
@@ -256,9 +258,17 @@ input.error {
     width: 100%;
   }
   
+  #header {
+    position:fixed;
+    top:0;
+    background-color:#131313;
+    z-index:98;
+  }
+  
   #footer {
     height:140px;
     position:relative;
+    margin-top:-140px;
   }
   #footer .content {
     position: relative;
@@ -275,10 +285,31 @@ input.error {
     float:none;
     padding:3px 0;
   }
+  #main {
+    padding-bottom: 140px;
+  }
 
   .content.nav {
     margin:0;
   }
+  
+  .menubar {
+    width:50px;
+    float:right;
+    margin-top:20px;
+    margin-right:20px;
+    text-align:right;
+  }
+  .logo {
+    width:200px;
+    overflow-x:hidden;
+    padding-left:20px;
+    padding-top:10px;
+  }
+  .logo img {
+    width:90%;
+  }
+  
   .nav ul {
     display: none;
     width: 100%;
@@ -300,35 +331,14 @@ input.error {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .menubar {
-    width:50px;
-    float:left;
-    margin-top:30px;
-    margin-left:20px;
-  }
-  .logo {
-    width:auto;
-    overflow-x:hidden;
-    padding-top:10px;
-    text-align:center;
-    margin-right:10px;
-  }
 }
 
 /* Anything smaller than Smartphones (portrait) ----------- */
 @media only screen and (max-width : 360px) {
   /* STYLES GO HERE */
-  #main {
-    padding-bottom:0;
-  }
+  
 }
 
 /* Anything smaller than iPhone (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-  .logo {
-    padding-top:15px;
-  }
-  .logo img {
-    width:95%;
-  }
 }
