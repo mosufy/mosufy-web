@@ -240,6 +240,9 @@ input.error {
 .colBoxes.fourCol li .colBox img {
   width:100%;
 }
+.colBoxes.fourCol li:nth-child(5n) {
+  clear:both;
+}
 
 .tags, .tags li {
   list-style-type:none;
