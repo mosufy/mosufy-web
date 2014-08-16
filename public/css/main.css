@@ -14,13 +14,21 @@ a:hover {
   color: inherit;
 }
 h1 {
-  font-size: 56px;
+  font-size:64px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px dashed #475868;
   font-weight: 300;
   text-align: center;
   color: #FFF;
 }
 h2 {
-  font-size: 21px;
+  font-size: 48px;
+}
+h3 {
+  font-size: 28px;
+  margin-bottom:10px;
+  text-align:left;
 }
 input, select, textarea {
   font-family: 'Open Sans', sans-serif;
@@ -81,6 +89,10 @@ input.error {
 }
 #main .content {
   clear: both;
+  text-align: center;
+  color: #fff;
+  padding: 50px 0 50px;
+  font-size:18px;
 }
 #footer {
   position: fixed;
@@ -117,33 +129,6 @@ input.error {
   padding-right:10px;
 }
 
-.content {
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  clear: both;
-}
-.content-squeeze {
-  width:600px;
-  margin:0 auto;
-}
-.content-squeeze h1 {
-  border-bottom:1px dashed #FFF;
-}
-
-.content.pageError {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.content.pageError h1 {
-  font-size: 200px;
-  line-height: 0;
-  font-weight: 900;
-}
-.content.pageError h2 {
-  font-size: 36px;
-}
-
 .logo {
   padding-top:30px;
   padding-bottom:10px;
@@ -178,22 +163,36 @@ input.error {
   border-bottom-right-radius:8px;
 }
 
-.homepage-intro .content {
-  text-align: center;
-  color: #fff;
-  padding: 100px 0 100px;
-  font-size:21px;
+.content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
-.homepage-intro .title {
-  font-size:64px;
-  padding-bottom:10px;
-  border-bottom:1px dashed #475868;
+.content-squeeze {
+  width:600px;
+  margin:100px auto 50px;
 }
-.homepage-intro span {
+.content-squeeze h2 {
+  border-bottom:1px dashed #FFF;
+}
+.content-squeeze ul {
+  margin:0;
+  padding:0;
+  margin-left:20px;
+}
+.content-squeeze ul li {
+  margin-top:20px;
+}
+
+.content.pageError h1 {
+  font-size: 200px;
+  line-height:200px;
+  font-weight: 900;
+  margin:0;
+}
+
+.subTitle {
   font-size:36px;
-}
-.homepage-intro p {
-  margin-top:30px;
 }
 
 .push {
@@ -219,21 +218,11 @@ input.error {
   width:auto;
   clear:none;
 }
-.colBoxes li .colBox h2 {
-  text-align:left;
-}
-.colBoxes li .colBox h2 a {
+.colBoxes li .colBox h3 a {
   color:inherit;
 }
-.colBoxes li .colBox h2 a:hover {
+.colBoxes li .colBox h3 a:hover {
   color: #FFAE00;
-}
-.colBoxes.fourCol li .colBox {
-  text-align:left;
-  margin-right:10px;
-}
-.colBoxes.fourCol li .colBox img {
-  box-shadow:0 0 10px 1px #000;
 }
 .colBoxes.fourCol li {
   width: 25%;
@@ -241,8 +230,15 @@ input.error {
 .colBoxes.fourCol li:nth-child(odd) {
   clear:none;
 }
-.colBoxes.fourCol li img {
-  width: 100%;
+.colBoxes.fourCol li .colBox {
+  text-align:left;
+  margin:0 10px;
+}
+.colBoxes.fourCol li .colBox img {
+  box-shadow:0 0 10px 1px #000;
+}
+.colBoxes.fourCol li .colBox img {
+  width:100%;
 }
 
 .tags, .tags li {
@@ -258,9 +254,11 @@ input.error {
   display:inline;
   font-size:14px;
   white-space:nowrap;
-  margin:10px 0;
-  margin-right:5px;
+  margin:10px 0 !important;
+  margin-right:5px !important;
+  padding-top:0 !important;
   width:auto;
+  clear:none !important;
 }
 .tags li a {
   border:1px solid #B4B4B4;
@@ -310,6 +308,12 @@ input.error {
     width: auto !important;
     clear:none;
   }
+  .colBoxes.fourCol li {
+    width: 50%;
+  }
+  .colBoxes.fourCol li:nth-child(odd) {
+    clear:both;
+  }
 }
 
 /* Anything smaller than Smartphones ----------- */
@@ -317,6 +321,16 @@ input.error {
   /* STYLES GO HERE */
   .mobile {
     display: block;
+  }
+  
+  h1 {
+    font-size:36px;
+  }
+  h2 {
+    font-size:32px;
+  }
+  h3 {
+    font-size:21px;
   }
   input,  select,  textarea {
     width: 100%;
@@ -356,8 +370,12 @@ input.error {
   #main .content {
     padding-top:100px;
   }
+  .content-squeeze {
+    margin:50px auto 20px;
+  }
   .content.pageError h1 {
     font-size:150px;
+    line-height:150px;
   }
   .content.nav {
     margin:0;
@@ -409,6 +427,10 @@ input.error {
   .colBoxes li .colBox {
     margin:0;
   }
+  
+  .subTitle {
+    font-size:21px;
+  }
 }
 
 /* Anything smaller than Smartphones (portrait) ----------- */
@@ -416,6 +438,13 @@ input.error {
   /* STYLES GO HERE */
   .colBoxes.fourCol li {
     width: 100%;
+    padding-top:40px;
+  }
+  .colBoxes.fourCol li:first-child {
+    padding-top:0;
+  }
+  .colBoxes.fourCol li .colBox {
+    margin:0;
   }
 }
 
