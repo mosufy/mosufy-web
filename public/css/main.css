@@ -27,9 +27,19 @@ h2 {
 }
 h3 {
   font-size: 28px;
+  margin-top:0;
   margin-bottom:10px;
   text-align:left;
 }
+h1 a,
+h2 a {
+  color:inherit;
+}
+h1 a:hover,
+h2 a:hover {
+  color: #FFAE00;
+}
+
 input, select, textarea {
   font-family: 'Open Sans', sans-serif;
   font-size: inherit;
@@ -170,7 +180,7 @@ input.error {
 }
 .content-squeeze {
   width:600px;
-  margin:100px auto 50px;
+  margin:0 auto 100px;
 }
 .content-squeeze h2 {
   border-bottom:1px dashed #FFF;
@@ -182,6 +192,9 @@ input.error {
 }
 .content-squeeze ul li {
   margin-top:20px;
+}
+.content-squeeze.blog h1 {
+  text-align:left;
 }
 
 .content.pageError h1 {
@@ -273,6 +286,15 @@ input.error {
 .tags li a:hover {
   background-color:#FFF;
   color:#000;
+}
+
+.blog_date {
+  margin-top:0;
+  text-align:right;
+  font-size:14px;
+}
+.blog_post {
+  text-align:left;
 }
 
 /* Anything bigger than the smallest laptop screen ----------- */

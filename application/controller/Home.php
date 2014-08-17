@@ -10,15 +10,6 @@ class Home extends Controller
     ));
   }
   
-  public function blog()
-  {    
-    $this->render('blog', array(
-      'metaTitle' => 'Life as a Techie - Mohd Sufiyan',
-      'metaDescription' => 'Chronicles of my life, lessons, tutorials, learnings. Everything web and technology.',
-      'page' => 'blog'
-    ));
-  }
-  
   public function projects()
   {    
     $this->render('projects', array(

@@ -1,0 +1,18 @@
+{% extends "_templates/base.twig" %}
+{% block content %}
+<div class="content">
+  <div class="content-squeeze blog">
+    <h1><a href="{{ blog['permalink'] }}">{{ blog['title'] }}</a></h1>
+    <p class="blog_date">Posted on {{ blog['date']|date('d M Y, h:ia') }}</p>
+    <div class="blog_post">{{ blog['content']|raw(html) }}</div>
+  </div>
+  
+  {% for k in blog_latest %}
+  <div class="content-squeeze">
+    <h3><a href="{{ k['permalink'] }}">{{ k['title'] }}</a></h3>
+    <p class="blog_date" style="text-align:left;">Posted on {{ k['date']|date('d M Y, h:ia') }}</p>
+    <div class="blog_post">{{ k['excerpt']|raw(html) }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
