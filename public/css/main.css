@@ -81,6 +81,14 @@ input.error {
   border-color: #D00003;
   display: block;
 }
+
+pre {
+  border: solid 1px #253545;
+	padding:10px; 
+	background: #475767;
+ 	color: #DBDBDB;
+}
+
 #wrapper {
   min-height: 100%;
   width: 100%;
@@ -295,6 +303,11 @@ input.error {
 }
 .blog_post {
   text-align:left;
+}
+.blog_post ul,
+.blog_post ol {
+  margin:0 25px;
+  padding:0;
 }
 
 /* Anything bigger than the smallest laptop screen ----------- */
