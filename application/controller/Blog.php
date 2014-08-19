@@ -21,7 +21,7 @@ class Blog extends Controller
       $currPostID = $post->ID;
       $blog['title'] = $post->post_title;
       $blog['content'] = apply_filters('the_content', $post->post_content);
-      $blog['permalink'] = URL .'blog/'. $post->post_name .'/';
+      $blog['permalink'] = URL .'/blog/'. $post->post_name .'/';
       $blog['date'] = $post->post_date;
     }
     
@@ -29,7 +29,7 @@ class Blog extends Controller
     foreach ($posts as $k=>$v){
       $blog_latest[$k]['title'] = $v->post_title;
       $blog_latest[$k]['excerpt'] = $v->post_excerpt; //get_the_excerpt($post->ID);
-      $blog_latest[$k]['permalink'] = URL .'blog/'. $v->post_name .'/';
+      $blog_latest[$k]['permalink'] = URL .'/blog/'. $v->post_name .'/';
       $blog_latest[$k]['date'] = $v->post_date;
     }
 

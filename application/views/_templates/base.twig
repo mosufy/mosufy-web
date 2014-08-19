@@ -11,7 +11,7 @@
 <meta property="og:description" content="{{ metaDescription }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ constant('URL') }}" />
-<meta property="og:image" content="{{ constant('URL') }}img/fb_icon.png" />
+<meta property="og:image" content="{{ constant('URL') }}/img/fb_icon.png" />
 <meta property="og:site_name" content="mosufy/php-mvc" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <link rel="icon" type="image/ico" href="img/favicon.ico" />
@@ -33,6 +33,15 @@
 function toggleMenuBar(){
 	$('#nav').slideToggle('fast');
 }
+
+// Google Analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '{% if constant('URL')=='www.mosufy.com' || constant('URL')=='mosufy.com' %}UA-21112298-12{% else %}UA-21112298-5{% endif %}', 'auto');
+ga('send', 'pageview');
 </script>
 </body>
 </html>

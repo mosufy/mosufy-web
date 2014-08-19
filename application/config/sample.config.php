@@ -40,7 +40,7 @@ define('HTTP_PROTOCOL',(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'
  * Configuration for: URL
  * DO NOT AMEND. This will help to define the BASE URL
  */
-define('URL', HTTP_PROTOCOL . $_SERVER['HTTP_HOST'] . '/');
+define('URL', HTTP_PROTOCOL . $_SERVER['HTTP_HOST']);
 
 /**
  * Configuration for: Twig Views

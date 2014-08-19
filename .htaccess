@@ -14,9 +14,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 # If not the specified directory, rewrite to index controller
-RewriteCond $1 !^(img|css|js|resources|sitemap.xml|robots.txt)
+RewriteCond $1 !^(img|css|js|sitemap.xml|robots.txt)
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 
 # If within public-specified directory, rewrite to public folder
-RewriteCond $1 ^(img|css|js|resources|sitemap.xml|robots.txt)
+RewriteCond $1 ^(img|css|js|sitemap.xml|robots.txt)
 RewriteRule ^(.*)$ public/$1 [L]
