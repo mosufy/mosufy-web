@@ -76,6 +76,16 @@ for file in *; do
 done
 
 #
+# Web user config post install
+#
+cd $TARGETDIR
+if [ -f composer.lock ]; then
+    /usr/local/bin/composer install --no-interaction
+else
+    /usr/local/bin/composer update --no-interaction
+fi
+
+#
 # Reset permissions
 #
 echo "Fixing permissions"
