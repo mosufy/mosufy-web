@@ -1,0 +1,42 @@
+---
+#
+# Build playbook should only be run on a new set of servers.
+# Be sure to already prepare the required servers beforehand.
+#
+# Vagrant: vagrant provision --provision-with main
+# VM: ansible-playbook ansible/server.yml -i ansible/inventories/staging/hosts.ini
+#
+
+- name: Basic rpm install
+  hosts: all
+  become: true
+  become_method: sudo
+  roles:
+    - mosufy.basic-rpm
+
+- name: Update kernel-devel
+  hosts: webservers
+  become: true
+  become_method: sudo
+  roles:
+    - { role: mosufy.kernel-devel, when: app_env == 'dev'}
+
+- name: Build webserver
+  hosts: webservers
+  become: true
+  become_method: sudo
+  roles:
+    - { role: geerlingguy.firewall, firewall_allowed_tcp_ports: "{{ firewall_allowed_tcp_ports_webserver }}", firewall_additional_rules: "{{ firewall_additional_rules_webserver }}", when: app_env != 'dev'}
+    - { role: kamaln7.swapfile, swapfile_size: "{{ swapfile_size_webserver }}", when: app_env != 'dev' }
+    - { role: mosufy.devel-tools, when: app_env != 'production' }
+    - mosufy.percona-client
+    - mosufy.lemp-stack
+
+- name: Build dbserver
+  hosts: dbservers
+  become: true
+  become_method: sudo
+  roles:
+    - { role: geerlingguy.firewall, firewall_allowed_tcp_ports: "{{ firewall_allowed_tcp_ports_dbserver }}", firewall_additional_rules: "{{ firewall_additional_rules_dbserver }}", when: app_env != 'dev' }
+    - { role: kamaln7.swapfile, swapfile_size: "{{ swapfile_size_dbserver }}", when: app_env != 'dev' }
+    - mosufy.percona

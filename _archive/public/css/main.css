@@ -1,0 +1,491 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+  color: #FFF;
+}
+a {
+  text-decoration: none;
+  color: #FFAE00;
+}
+a:hover {
+  color: inherit;
+}
+h1 {
+  font-size:64px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px dashed #475868;
+  font-weight: 300;
+  text-align: center;
+  color: #FFF;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 28px;
+  margin-top:0;
+  margin-bottom:10px;
+  text-align:left;
+}
+h1 a,
+h2 a {
+  color:inherit;
+}
+h1 a:hover,
+h2 a:hover {
+  color: #FFAE00;
+}
+
+input, select, textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-size: inherit;
+  padding: 5px 10px;
+  border: 1px solid #CCC;
+  background-color: #FFF;
+  border-radius: 5px;
+  width: 300px;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type=submit], input[type=button], .button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  background-color: #FF0004;
+  border: 2px solid #FF0004;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+  padding: 5px 20px;
+  display: inline;
+  width: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type=submit]:hover, input[type=button]:hover, .button:hover {
+  background-color: #BB0003;
+  border-color: #BB0003;
+}
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+  width: auto;
+}
+input.error {
+  border-color: #D00003;
+  display: block;
+}
+
+pre {
+  border: solid 1px #253545;
+	padding:10px; 
+	background: #475767;
+ 	color: #DBDBDB;
+}
+
+#wrapper {
+  min-height: 100%;
+  width: 100%;
+  background-color:#2b3947;
+}
+#header {
+  width: 100%;
+}
+#header .content {
+  color: #FFF;
+}
+#main {
+  overflow: auto;
+  padding-bottom: 30px;
+  width: 100%;
+}
+#main .content {
+  clear: both;
+  text-align: center;
+  color: #fff;
+  padding: 50px 0 50px;
+  font-size:18px;
+}
+#footer {
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  height: 30px;
+  background-color: #131313;
+  clear: both;
+}
+#footer .content {
+  font-size: 13px;
+  line-height:none;
+  color: #DCDCDC;
+}
+#footer .content ul, #footer .content li {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+#footer .content ul {
+  margin-top:5px;
+}
+#footer .content li {
+  float:right;
+  padding-left:15px;
+}
+#footer .content a {
+  color:inherit;
+}
+#footer .content a:hover {
+  color:#FFAE00;
+}
+#footer .content a img {
+  padding-right:10px;
+}
+
+.logo {
+  padding-top:30px;
+  padding-bottom:10px;
+}
+
+.nav ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  margin: 0;
+  list-style-type: none;
+  float: left;
+  color: #FFF;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: none;
+  padding-left:10px;
+}
+.nav li a {
+  color:inherit;
+  padding:60px 20px 15px;
+  display:block;
+}
+.nav li a:hover, .nav li.selected a, .nav li.selected a:hover {
+  background-color: #FFFFFF !important;
+  color: #000 !important;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.content-squeeze {
+  width:600px;
+  margin:0 auto 100px;
+}
+.content-squeeze h2 {
+  border-bottom:1px dashed #FFF;
+}
+.content-squeeze ul {
+  margin:0;
+  padding:0;
+  margin-left:20px;
+}
+.content-squeeze ul li {
+  margin-top:20px;
+}
+.content-squeeze.blog h1 {
+  text-align:left;
+}
+
+.content.pageError h1 {
+  font-size: 200px;
+  line-height:200px;
+  font-weight: 900;
+  margin:0;
+}
+
+.subTitle {
+  font-size:36px;
+}
+
+.push {
+  clear: both;
+}
+.mobile {
+  display: none;
+}
+
+.colBoxes ul, .colBoxes li {
+  margin: 0;
+  padding: 0;
+}
+.colBoxes li {
+  float: left;
+  list-style-type: none;
+  width: 50%;
+}
+.colBoxes li:nth-child(odd) {
+  clear:both;
+}
+.colBoxes li .colBox li {
+  width:auto;
+  clear:none;
+}
+.colBoxes li .colBox h3 a {
+  color:inherit;
+}
+.colBoxes li .colBox h3 a:hover {
+  color: #FFAE00;
+}
+.colBoxes.fourCol li {
+  width: 25%;
+}
+.colBoxes.fourCol li:nth-child(odd) {
+  clear:none;
+}
+.colBoxes.fourCol li .colBox {
+  text-align:left;
+  margin:0 10px;
+}
+.colBoxes.fourCol li .colBox img {
+  box-shadow:0 0 10px 1px #000;
+}
+.colBoxes.fourCol li .colBox img {
+  width:100%;
+}
+.colBoxes.fourCol li:nth-child(5n) {
+  clear:both;
+}
+
+.tags, .tags li {
+  list-style-type:none;
+  padding:0;
+  margin:0;
+}
+.tags {
+  width:100%;
+  margin:0 auto;
+}
+.tags li {
+  display:inline;
+  font-size:14px;
+  white-space:nowrap;
+  margin:10px 0 !important;
+  margin-right:5px !important;
+  padding-top:0 !important;
+  width:auto;
+  clear:none !important;
+}
+.tags li a {
+  border:1px solid #B4B4B4;
+  padding:3px 12px;
+  margin-bottom:10px;
+  border-radius:5px;
+  color:inherit;
+}
+.tags li a:hover {
+  background-color:#FFF;
+  color:#000;
+}
+
+.blog_date {
+  margin-top:0;
+  text-align:right;
+  font-size:14px;
+}
+.blog_post {
+  text-align:left;
+}
+.blog_post ul,
+.blog_post ol {
+  margin:0 25px;
+  padding:0;
+}
+
+/* Anything bigger than the smallest laptop screen ----------- */
+@media only screen and (min-width : 1024px) {
+  /* STYLES GO HERE */
+  .content {
+    width: auto;
+    margin-left:40px;
+    margin-right:40px;
+  }
+}
+
+/* Anything smaller than laptop screen ----------- */
+@media only screen and (max-width : 1024px) {
+  /* STYLES GO HERE */
+  .content {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .content-squeeze {
+    width:100%;
+  }
+}
+
+/* Anything smaller than iPad ----------- */
+@media only screen and (max-width : 979px) {
+  /* STYLES GO HERE */
+  .colBoxes li {
+    width: 50%;
+  }
+  .colBoxes li:nth-child(odd) {
+    clear:both;
+  }
+  .colBoxes li .colBox li {
+    width: auto !important;
+    clear:none;
+  }
+  .colBoxes.fourCol li {
+    width: 50%;
+  }
+  .colBoxes.fourCol li:nth-child(odd) {
+    clear:both;
+  }
+}
+
+/* Anything smaller than Smartphones ----------- */
+@media only screen and (max-width : 640px) {
+  /* STYLES GO HERE */
+  .mobile {
+    display: block;
+  }
+  
+  h1 {
+    font-size:36px;
+  }
+  h2 {
+    font-size:32px;
+  }
+  h3 {
+    font-size:21px;
+  }
+  input,  select,  textarea {
+    width: 100%;
+  }
+  
+  #header {
+    position:fixed;
+    top:0;
+    background-color:#131313;
+    z-index:98;
+  }
+  
+  #footer {
+    height:140px;
+    position:relative;
+    margin-top:-140px;
+  }
+  #footer .content {
+    position: relative;
+    top: 10px;
+    transform:none;
+    text-align:center;
+    padding-bottom:10px;
+  }
+  #footer .content ul {
+    width:100%;
+    margin:0 0 10px;
+  }
+  #footer .content li {
+    float:none;
+    padding:3px 0;
+  }
+  #main {
+    padding-bottom: 100px;
+  }
+  
+  #main .content {
+    padding-top:100px;
+  }
+  .content-squeeze {
+    margin:50px auto 20px;
+  }
+  .content.pageError h1 {
+    font-size:150px;
+    line-height:150px;
+  }
+  .content.nav {
+    margin:0;
+  }
+  
+  .menubar {
+    width:50px;
+    float:right;
+    margin-top:20px;
+    margin-right:20px;
+    text-align:right;
+  }
+  .logo {
+    width:200px;
+    overflow-x:hidden;
+    padding-left:20px;
+    padding-top:10px;
+  }
+  .logo img {
+    width:90%;
+  }
+  
+  .nav ul {
+    display: none;
+    width: 100%;
+    background-color: #292929;
+    position: absolute;
+    top: inherit;
+    z-index: 99;
+  }
+  .nav li {
+    width: 100%;
+    padding:0;
+  }
+  .nav li a {
+    padding:10px 20px;
+  }
+  .nav li.selected a, .nav li a:hover {
+    border-radius: 0 !important;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .colBoxes li {
+    width: 100%;
+  }
+  .colBoxes li .colBox {
+    margin:0;
+  }
+  
+  .subTitle {
+    font-size:21px;
+  }
+}
+
+/* Anything smaller than Smartphones (portrait) ----------- */
+@media only screen and (max-width : 360px) {
+  /* STYLES GO HERE */
+  .colBoxes.fourCol li {
+    width: 100%;
+    padding-top:40px;
+  }
+  .colBoxes.fourCol li:first-child {
+    padding-top:0;
+  }
+  .colBoxes.fourCol li .colBox {
+    margin:0;
+  }
+}
+
+/* Anything smaller than iPhone (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+}

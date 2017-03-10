@@ -1,0 +1,34 @@
+#
+# Install all roles required
+#
+# To install roles in ansible/roles dir, run the command below from project root folder.
+#
+# $ ansible-galaxy install -r ansible/install-roles.yml -p ansible/roles/
+#
+
+- src: geerlingguy.firewall
+- src: kamaln7.swapfile
+
+- src: mosufy.do-agent
+  version: master
+
+- src: mosufy.basic-rpm
+  version: master
+
+- src: mosufy.devel-tools
+  version: master
+
+- src: mosufy.lemp-stack
+  version: master
+
+- src: mosufy.percona
+  version: master
+
+- src: mosufy.percona-client
+  version: master
+
+- src: mosufy.db-users
+  version: master
+
+- src: mosufy.kernel-devel
+  version: master

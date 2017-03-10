@@ -1,0 +1,29 @@
+---
+- include: setup-deploy-dir.yml
+  when: app_env != 'dev'
+
+- include: import-nginxconf.yml
+
+- include: import-ssl.yml
+  when: require_ssl == true
+
+- include: import-source.yml
+  when: app_env != 'dev'
+
+- include: import-DOTenv.yml
+
+- include: composer-install.yml
+  become: false
+
+- include: reset-permissions.yml
+
+- include: html-symlink.yml
+  when: app_env != 'dev'
+
+- name: restart php-fpm
+  service:
+    name: php-fpm
+    state: restarted
+
+- include: cron.yml
+  when: app_env == 'production'

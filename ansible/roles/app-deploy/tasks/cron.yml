@@ -1,0 +1,8 @@
+---
+- name: "Create cron job: Start wp-cron.php"
+  cron:
+    name: "start wp-cron.php"
+    minute: "*/15"
+    hour: "*"
+    job: "php {{ app_public_path }}/wp/wp-cron.php > /dev/null"
+    user: "{{ web_user }}"

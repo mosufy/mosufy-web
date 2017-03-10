@@ -1,0 +1,75 @@
+---
+
+#
+# ansible config
+#
+deploy_type: new
+require_ssl: true
+php_version: 70
+install_php_memcached: true
+
+#
+# swapfile
+#
+swapfile_size: 2GB
+
+#
+# app config
+#
+app_env: dev
+app_name: mosufy
+app_path_parent: "/var/www/sites/{{ app_name }}"
+app_path: "{{ app_path_parent }}/html"
+app_deploy_path: "{{ app_path_parent }}/html"
+app_public_path: "{{ app_path }}/public"
+app_url: https://mosufy.dev
+
+basic_auth: false
+
+web_user_become: vagrant
+web_user:
+web_group:
+
+mysql_root_password: m0su4yR*0T
+mysql_slow_query_log: 0
+
+nginx_server_name: mosufy.dev
+nginx_ssl_cert: mosufy.crt
+nginx_ssl_cert_key: mosufy.key
+
+#
+# DB config
+#
+db_connection: mysql
+db_host: localhost
+db_port: 3306
+db_database: mosufy
+db_username: mosufy
+db_password: m0s3fyP@SS
+
+#
+# Grant user@hosts
+#
+db_grant_users:
+  - { database: "{{ db_database }}", username: "{{ db_username }}", host: localhost, password: "{{ db_password }}" }
+
+#
+# .env file
+#
+app_debug: true
+app_key: "FoNrCM7ZQo9Vvj7c5H8568m7xa81DI7P"
+
+cache_driver: "memcached"
+session_driver: "memcached"
+queue_driver: "redis"
+
+mail_driver: "mailgun"
+mail_pretend: true
+
+mailgun_domain:
+mailgun_secret:
+
+trusted_proxies: "{{ inventory_hostname }}"
+
+accesslog_switch: "on"
+queue_switch: "on"

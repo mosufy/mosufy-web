@@ -1,0 +1,16 @@
+---
+- name: Sync source folders to app root
+  become: false
+  synchronize:
+    src: "../../../{{ item }}"
+    dest: "{{ app_deploy_path }}"
+    rsync_path: "sudo rsync"
+  with_items: "{{ source_list.folders }}"
+
+- name: Sync source files to app root
+  become: false
+  synchronize:
+    src: "../../../{{ item }}"
+    dest: "{{ app_deploy_path }}/{{ item }}"
+    rsync_path: "sudo rsync"
+  with_items: "{{ source_list.files }}"

@@ -1,0 +1,28 @@
+---
+#
+# To run a deployment, use this command, otherwise it will run the build script as well:
+#
+# Vagrant: vagrant provision --provision-with deploy
+# VM: ansible-playbook ansible/deploy.yml -i inventories/production/hosts.ini
+#
+
+- name: Prepare database
+  hosts: dbservers
+  become: true
+  become_method: sudo
+  roles:
+    - db-deploy
+    - mosufy.db-users
+
+- name: Setting fact for webservers
+  hosts: webservers
+  tasks:
+    - set_fact:
+        datetime: "{{ lookup('pipe','date +%Y%m%d_%H%M') }}"
+
+- name: Deploy app to webservers
+  hosts: webservers
+  become: true
+  become_method: sudo
+  roles:
+    - app-deploy

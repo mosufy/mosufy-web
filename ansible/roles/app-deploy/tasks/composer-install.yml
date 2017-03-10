@@ -1,0 +1,27 @@
+---
+- name: Install composer vendor packages with require-dev
+  composer:
+    command: install
+    working_dir: "{{ app_deploy_path }}"
+    no_dev: no
+  register: composer_output
+  when: app_env != 'production'
+  notify:
+    composer dumpautoload
+
+- debug:
+    msg: "{{ composer_output.stdout_lines }}"
+  when: app_env != 'production'
+
+- name: Install composer vendor packages for production
+  composer:
+    command: install
+    working_dir: "{{ app_deploy_path }}"
+  register: composer_output
+  when: app_env == 'production'
+  notify:
+    composer dumpautoload
+
+- debug:
+    msg: "{{ composer_output.stdout_lines }}"
+  when: app_env == 'production'

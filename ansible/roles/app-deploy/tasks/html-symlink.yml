@@ -1,0 +1,13 @@
+---
+- name: remove existing symlink {{ app_path }}
+  file:
+    path: "{{ app_path }}"
+    state: absent
+
+- name: Create "html" symlink to deploy path
+  file:
+    path: "{{ app_path }}"
+    src: "{{ app_deploy_path }}"
+    owner: "nginx"
+    group: "nginx"
+    state: link

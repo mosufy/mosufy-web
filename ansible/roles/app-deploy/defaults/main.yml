@@ -1,0 +1,61 @@
+---
+#
+# Default configs
+#
+app_env: dev
+app_name: appname
+app_path_parent: "/var/www/sites/{{ app_name }}"
+app_path: "{{ app_path_parent }}/html"
+app_deploy_path: "{{ app_path_parent }}/{{ datetime }}"
+app_public_path: "{{ app_path }}/public"
+app_url: https://www.mosufy.com
+
+basic_auth: false
+basic_auth_admin: false
+basic_auth_username: admin
+basic_auth_password: $apr1$Oi/4g8BH$WaeZfrCbKAbd2wNM3WODv0 # adminpass
+
+require_ssl: true
+web_user: nginx
+
+#
+# DB configs
+#
+db_connection: mysql
+db_host: localhost
+db_port: 3306
+db_database: appdb
+db_username: dbuser
+db_password: P@ssw0rd
+
+#
+# .env file
+#
+app_debug: true
+app_key: "6BFDB99E2BA65789A5C679D42E49D"
+
+cache_driver: "memcached"
+session_driver: "memcached"
+queue_driver: "redis"
+
+mail_driver: "mailgun"
+mail_pretend: true
+
+mailgun_domain:
+mailgun_secret:
+
+trusted_proxies: "{{ inventory_hostname }}"
+
+accesslog_switch: "on"
+queue_switch: "on"
+
+#
+# list of files and folders to import
+#
+source_list:
+  folders:
+    - config
+    - web
+  files:
+    - composer.json
+    - composer.lock

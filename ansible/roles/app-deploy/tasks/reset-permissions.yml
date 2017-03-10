@@ -1,0 +1,8 @@
+---
+- name: Reset permissions
+  file:
+    path: "{{ app_deploy_path }}"
+    state: directory
+    owner: "{{ web_user }}"
+    group: "{{ web_user }}"
+    recurse: yes

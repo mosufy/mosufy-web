@@ -1,0 +1,22 @@
+---
+- name: Check if project root dir already exists
+  stat:
+    path: "{{ app_path_parent }}"
+  register: stat_result
+
+- name: Remove all deploy paths except latest 3
+  shell: rm -rf `ls -t | awk 'NR>3'`
+  args:
+    chdir: "{{ app_path_parent }}"
+    warn: false
+  when: stat_result.stat.exists == True
+
+- name: Make app path
+  become: true
+  become_method: sudo
+  file:
+    path: "{{ app_deploy_path }}"
+    state: directory
+    owner: "jenkins"
+    group: "jenkins"
+    recurse: yes
