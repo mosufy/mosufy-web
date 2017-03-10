@@ -15,7 +15,7 @@ var AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = {
   cache: true,
-  context: path.resolve(__dirname, '../resources/app'),
+  context: path.resolve(__dirname, '../resources/react'),
   entry: {
     bundle: ['./index.js']
   },
