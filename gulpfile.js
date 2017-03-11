@@ -13,16 +13,28 @@ var elixir = require('laravel-elixir');
 
 elixir(function (mix) {
   // Copying Bootstrap and JQuery
-  mix.copy('node_modules/jquery/dist/jquery.min.js', 'resources/assets/js/jquery.min.js');
-  mix.copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'resources/assets/js/bootstrap.min.js');
-  mix.copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap.min.css');
+  mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js');
+  mix.copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js/bootstrap.min.js');
+  mix.copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css');
 
   // Combine custom CSS
   mix.styles([
     'style.css'
   ], 'public/css/main.css');
 
-  // Copy all JS/CSS files to public js/css folders respectively
-  mix.copy('resources/assets/js', 'public/js');
+  // Combine JS files
+  mix.scripts([
+    'SmoothScroll.js',
+    'easypiechart,js',
+    'jquery.prettyPhoto.js',
+    'jquery.isotope.js',
+    'jquery.counterup.js',
+    'waypoints.js',
+    'jqBootstrapValidation.js'
+  ], 'public/js/packages.js');
+
+  // Copy all assets files to public folders respectively
   mix.copy('resources/assets/css', 'public/css');
+  mix.copy('resources/assets/img', 'public/img');
+  mix.copy('resources/assets/js/main.js', 'public/js/main.js');
 });
