@@ -35,6 +35,7 @@ elixir(function (mix) {
 
   // Copy all assets files to public folders respectively
   mix.copy('resources/assets/css', 'public/css');
+  mix.copy('resources/assets/fonts', 'public/fonts');
   mix.copy('resources/assets/img', 'public/img');
   mix.copy('resources/assets/js/main.js', 'public/js/main.js');
 });
