@@ -11,14 +11,13 @@ export default class Contact extends React.Component {
           </div>
           <div className="col-md-8 col-md-offset-2">
             <div className="col-md-4"><i className="fa fa-map-marker fa-2x"/>
-              <p>4321 California St,<br/>
-                San Francisco, CA 12345</p>
+              <p>Singapore</p>
             </div>
             <div className="col-md-4"><i className="fa fa-envelope-o fa-2x"/>
-              <p>info@company.com</p>
+              <p>mosufy@gmail.com</p>
             </div>
             <div className="col-md-4"><i className="fa fa-phone fa-2x"/>
-              <p> +1 123 456 1234</p>
+              <p>+65 8484 0255</p>
             </div>
             <div className="clearfix"></div>
           </div>
@@ -48,12 +47,12 @@ export default class Contact extends React.Component {
             </form>
             <div className="social">
               <ul>
-                <li><a href="#"><i className="fa fa-facebook"/></a></li>
-                <li><a href="#"><i className="fa fa-twitter"/></a></li>
-                <li><a href="#"><i className="fa fa-dribbble"/></a></li>
-                <li><a href="#"><i className="fa fa-github"/></a></li>
-                <li><a href="#"><i className="fa fa-instagram"/></a></li>
-                <li><a href="#"><i className="fa fa-linkedin"/></a></li>
+                <li><a href="https://www.facebook.com/mosufy"><i className="fa fa-facebook"/></a></li>
+                {/*<li><a href="#"><i className="fa fa-twitter"/></a></li>*/}
+                {/*<li><a href="#"><i className="fa fa-dribbble"/></a></li>*/}
+                <li><a href="https://www.github.com/mosufy"><i className="fa fa-github"/></a></li>
+                {/*<li><a href="#"><i className="fa fa-instagram"/></a></li>*/}
+                <li><a href="https://www.linkedin.com/in/mohdsufiyan"><i className="fa fa-linkedin"/></a></li>
               </ul>
             </div>
           </div>
