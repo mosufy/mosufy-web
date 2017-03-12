@@ -24,7 +24,7 @@ export default class Contact extends React.Component {
           </div>
           <div className="col-md-8 col-md-offset-2">
             <h3>Leave me a message</h3>
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form name="sentMessage" id="contactForm" noValidate>
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">

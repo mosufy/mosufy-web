@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>mosufy - Tech Lead and an Aspiring Entrepreneur</title>
+  <title>Mohd Sufiyan - Tech Lead and an Aspiring Entrepreneur</title>
 
-  <meta name="description" content="Need a developer that can handle the full spectrum of your web-based software or app including back-end, front-end and server administration? Hook me up!">
+  <meta name="description" content="Need a developer that can handle the full spectrum of your web-based software or app from idea validation to product development and even server administration? Hook me up!">
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">

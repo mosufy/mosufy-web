@@ -24,13 +24,13 @@ elixir(function (mix) {
 
   // Combine JS files
   mix.scripts([
-    'SmoothScroll.js',
-    'easypiechart,js',
+    // 'SmoothScroll.js',
+    // 'easypiechart,js',
     'jquery.prettyPhoto.js',
-    'jquery.isotope.js',
-    'jquery.counterup.js',
-    'waypoints.js',
-    'jqBootstrapValidation.js'
+    // 'jquery.isotope.js',
+    // 'jquery.counterup.js',
+    // 'waypoints.js',
+    // 'jqBootstrapValidation.js'
   ], 'public/js/packages.js');
 
   // Copy all assets files to public folders respectively

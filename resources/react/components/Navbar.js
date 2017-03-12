@@ -10,7 +10,7 @@ export default class Navbar extends React.Component {
               <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i className="fa fa-bars"/>
               </button>
-              <a className="navbar-brand page-scroll" href="#page-top">John Doe</a>
+              <a className="navbar-brand page-scroll" href="#page-top">Mohd Sufiyan</a>
             </div>
 
             <div className="collapse navbar-collapse navbar-right navbar-main-collapse">
