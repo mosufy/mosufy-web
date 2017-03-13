@@ -16,9 +16,9 @@ export default class Portfolio extends React.Component {
               <li>
                 <ol className="type">
                   <li><a href="#" data-filter="*" className="active">All</a></li>
-                  <li><a href="#" data-filter=".web">Web Design</a></li>
-                  <li><a href="#" data-filter=".app">App Development</a></li>
-                  <li><a href="#" data-filter=".branding">Branding</a></li>
+                  <li><a href="#" data-filter=".open-source">Open Source</a></li>
+                  <li><a href="#" data-filter=".project">Project</a></li>
+                  <li><a href="#" data-filter=".experiment">Experiment</a></li>
                 </ol>
               </li>
             </ul>

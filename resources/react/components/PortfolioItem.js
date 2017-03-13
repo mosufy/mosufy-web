@@ -3,7 +3,7 @@ import React from 'react';
 export default class PortfolioItem extends React.Component {
   render() {
     return (
-      <div className="col-sm-6 col-md-3 col-lg-3 web">
+      <div className="col-sm-6 col-md-4 col-lg-4 web">
         <div className="portfolio-item">
           <div className="hover-bg">
             <a href={this.props.link} target="_blank" title={this.props.title} rel="prettyPhoto">
