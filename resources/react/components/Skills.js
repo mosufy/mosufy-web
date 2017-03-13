@@ -19,19 +19,19 @@ export default class About extends React.Component {
             <div className="col-md-4 col-sm-6 skill">
               <h4>Front-end</h4>
               <span className="chart">
-                <span className="skill-items">HTML5 &bull; JavaScript<br/> Blade &bull; Bootstrap<br/> Gulp &bull; Bower<br/> React &bull; React Native<br/> Canvas</span>
+                <span className="skill-items">HTML5 &bull; CSS3<br/> JavaScript &bull; JQuery<br/> Blade &bull; Bootstrap<br/> Gulp &bull; Bower<br/> React &bull; React Native<br/> Canvas</span>
               </span>
             </div>
             <div className="col-md-4 col-sm-6 skill">
               <h4>DevOps</h4>
               <span className="chart">
-                <span className="skill-items">Vagrant &bull; Virtualbox<br/> Ansible &bull; Jenkins CI<br/> AWS &bull; Digital Ocean<br/> Cloudflare &bull; CloudFront<br/> Bugsnag &bull; Sentry<br/> Tinc VPN &bull; Travis CI</span>
+                <span className="skill-items">Vagrant &bull; Virtualbox<br/> Ansible &bull; Jenkins CI<br/> Web Server Administration<br/> AWS &bull; Digital Ocean<br/> Cloudflare &bull; CloudFront<br/> Bugsnag &bull; Sentry<br/> Tinc VPN &bull; Travis CI</span>
               </span>
             </div>
             <div className="col-md-4 col-sm-6 skill">
               <h4>Software</h4>
               <span className="chart">
-                <span className="skill-items">SourceTree &bull; Git<br/> JIRA &bull; Confluence<br/> GitHub &bull; Bitbucket<br/> Stash &bull; Crucible</span>
+                <span className="skill-items">SourceTree &bull; Git<br/> JIRA &bull; Confluence<br/> GitHub &bull; Bitbucket<br/> Stash &bull; Crucible<br/> Deployment Automation</span>
               </span>
             </div>
             <div className="col-md-4 col-sm-6 skill">

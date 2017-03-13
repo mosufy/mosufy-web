@@ -888,4 +888,9 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 .skill-items {
   color: #121d1f;
 }
+
+.portfolio-item .hover-text {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 /*# sourceMappingURL=main.css.map */
