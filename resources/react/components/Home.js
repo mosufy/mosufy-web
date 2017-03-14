@@ -4,7 +4,7 @@ import Hero from './Hero';
 import About from './About';
 import Skills from './Skills';
 import Portfolio from './Portfolio';
-import Achievements from './Achievements';
+import Stats from './Stats';
 import Resume from './Resume';
 import Contact from  './Contact';
 
@@ -17,7 +17,7 @@ export default class Home extends React.Component {
         <About/>
         <Skills/>
         <Portfolio/>
-        <Achievements/>
+        <Stats/>
         <Resume/>
         <Contact/>
       </div>
