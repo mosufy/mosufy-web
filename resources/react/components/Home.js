@@ -8,19 +8,19 @@ import Stats from './Stats';
 import Resume from './Resume';
 import Contact from  './Contact';
 
-export default class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <Hero/>
-        <Navbar/>
-        <About/>
-        <Skills/>
-        <Portfolio/>
-        <Stats/>
-        <Resume/>
-        <Contact/>
-      </div>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <div>
+      <Hero/>
+      <Navbar/>
+      <About/>
+      <Skills/>
+      <Portfolio/>
+      <Stats/>
+      <Resume/>
+      <Contact/>
+    </div>
+  );
+};
+
+export default Home;
