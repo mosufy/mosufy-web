@@ -5,7 +5,6 @@ const Portfolio = () => {
   return (
     <div id="portfolio">
       <div className="container">
-
         <div className="section-title text-center center">
           <h2>Portfolio</h2>
           <hr/>
