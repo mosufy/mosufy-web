@@ -1,6 +1,6 @@
-const portfolioCategory = (state = 'all', action) => {
+const portfolioCategory = (state = 'portfolio-category-all', action) => {
   switch (action.type) {
-    case 'SWITCH_CATEGORY':
+    case 'TOGGLE_CATEGORY':
       return action.category;
     default:
       return state

@@ -35,6 +35,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     switchPortfolioCategory: (e) => {
+      e.preventDefault();
+
       let category = $(e.target).closest("a").attr('id');
       dispatch(portfolioActions.switchCategory(category));
     },

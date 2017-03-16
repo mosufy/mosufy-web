@@ -2,7 +2,6 @@ import React from 'react';
 import PortfolioList from './PortfolioList';
 
 const Portfolio = ({portfolios, portfolioCategory, switchPortfolioCategory}) => {
-  console.log({portfolios});
   return (
     <div id="portfolio">
       <div className="container">
@@ -14,10 +13,18 @@ const Portfolio = ({portfolios, portfolioCategory, switchPortfolioCategory}) => 
           <ul className="cat">
             <li>
               <ol className="type">
-                <li><a href="#" id="portfolio-category-all" className="active">All</a></li>
-                <li><a href="#" id="portfolio-category-open-source">Open Source</a></li>
-                <li><a href="#" id="portfolio-category-project">Project</a></li>
-                <li><a href="#" id="portfolio-category-experiment">Experiment</a></li>
+                <li>
+                  <a href="#" id="portfolio-category-all" className={portfolioCategory == "portfolio-category-all" ? "active" : ""} onClick={switchPortfolioCategory}>All</a>
+                </li>
+                <li>
+                  <a href="#" id="portfolio-category-open-source" className={portfolioCategory == "portfolio-category-open-source" ? "active" : ""} onClick={switchPortfolioCategory}>Open Source</a>
+                </li>
+                <li>
+                  <a href="#" id="portfolio-category-project" className={portfolioCategory == "portfolio-category-project" ? "active" : ""} onClick={switchPortfolioCategory}>Project</a>
+                </li>
+                <li>
+                  <a href="#" id="portfolio-category-experiment" className={portfolioCategory == "portfolio-category-experiment" ? "active" : ""} onClick={switchPortfolioCategory}>Experiment</a>
+                </li>
               </ol>
             </li>
           </ul>

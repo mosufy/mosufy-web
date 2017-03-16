@@ -1,4 +1,4 @@
-export const resetPortfolio = () => {
+export const resetPortfolio = (category = 'portfolio-category-all') => {
   return {
     type: 'RESET_PORTFOLIO',
     payload: {
@@ -59,13 +59,21 @@ export const resetPortfolio = () => {
           link: "https://github.com/mosufy/php-mvc"
         }
       ]
-    }
+    },
+    category
   }
 };
 
 export const switchCategory = (category) => {
+  return (dispatch, getState) => {
+    dispatch(resetPortfolio(category));
+    dispatch(toggleCategory(category));
+  }
+};
+
+export const toggleCategory = (category) => {
   return {
-    type: 'SWITCH_CATEGORY',
+    type: 'TOGGLE_CATEGORY',
     category
   }
 };

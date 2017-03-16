@@ -2,17 +2,20 @@ const portfolios = (state = [], action) => {
   switch (action.type) {
     case 'RESET_PORTFOLIO':
       let portfolios = action.payload.data;
+      let category = action.category;
       let items = [];
 
       for (let i = 0; i < portfolios.length; i++) {
-        items.push({
-          id: i,
-          title: action.payload.data[i].title,
-          snippet: action.payload.data[i].snippet,
-          category: action.payload.data[i].category,
-          img: action.payload.data[i].img,
-          link: action.payload.data[i].link
-        });
+        if (category == "portfolio-category-all" || category == "portfolio-category-" + action.payload.data[i].category) {
+          items.push({
+            id: i,
+            title: portfolios[i].title,
+            snippet: portfolios[i].snippet,
+            category: portfolios[i].category,
+            img: portfolios[i].img,
+            link: portfolios[i].link
+          });
+        }
       }
 
       return items;
