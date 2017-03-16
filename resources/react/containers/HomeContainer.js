@@ -8,11 +8,40 @@
 
 import React from 'react';
 import Home from '../components/Home';
+import {connect} from 'react-redux';
+import * as portfolioActions from './../actions/portfolioActions';
 
-export default class HomeContainer extends React.Component {
+class HomeContainer extends React.Component {
+  componentDidMount() {
+    this.props.resetPortfolio();
+  }
+
   render() {
     return (
-      <Home/>
+      <Home portfolios={this.props.portfolios}
+            portfolioCategory={this.props.portfolioCategory}
+            switchPortfolioCategory={this.props.switchPortfolioCategory}/>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    portfolios: state.portfolios,
+    portfolioCategory: state.portfolioCategory
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    switchPortfolioCategory: (e) => {
+      let category = $(e.target).closest("a").attr('id');
+      dispatch(portfolioActions.switchCategory(category));
+    },
+    resetPortfolio: () => {
+      dispatch(portfolioActions.resetPortfolio());
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

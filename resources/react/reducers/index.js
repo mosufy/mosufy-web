@@ -10,10 +10,12 @@
  */
 
 import {combineReducers} from 'redux';
-import app from './app';
+import portfolios from './portfolios';
+import portfolioCategory from './portfolioCategory';
 
 const App = combineReducers({
-  app,
+  portfolios,
+  portfolioCategory
 });
 
 export default App;

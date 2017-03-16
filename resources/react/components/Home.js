@@ -8,14 +8,16 @@ import Stats from './Stats';
 import Resume from './Resume';
 import Contact from  './Contact';
 
-const Home = () => {
+const Home = ({portfolios, portfolioCategory, switchPortfolioCategory}) => {
   return (
     <div>
       <Hero/>
       <Navbar/>
       <About/>
       <Skills/>
-      <Portfolio/>
+      <Portfolio portfolios={portfolios}
+                 portfolioCategory={portfolioCategory}
+                 switchPortfolioCategory={switchPortfolioCategory}/>
       <Stats/>
       <Resume/>
       <Contact/>

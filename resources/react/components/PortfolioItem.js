@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PortfolioItem = ({link, title, snippet, img}) => {
+const PortfolioItem = ({title, snippet, category, img, link}) => {
   return (
-    <div className="col-sm-6 col-md-4 col-lg-4 web">
+    <div className={"col-sm-6 col-md-4 col-lg-4 " + category}>
       <div className="portfolio-item">
         <div className="hover-bg">
           <a href={link} target="_blank" title={title} rel="prettyPhoto">
