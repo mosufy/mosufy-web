@@ -38,4 +38,5 @@ elixir(function (mix) {
   mix.copy('resources/assets/fonts', 'public/fonts');
   mix.copy('resources/assets/img', 'public/img');
   mix.copy('resources/assets/js/main.js', 'public/js/main.js');
+  mix.copy('resources/assets/favicons', 'public');
 });
