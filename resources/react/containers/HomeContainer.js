@@ -12,6 +12,10 @@ import {connect} from 'react-redux';
 import * as portfolioActions from './../actions/portfolioActions';
 
 class HomeContainer extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return (this.props.portfolioCategory !== nextProps.portfolioCategory);
+  }
+
   componentDidMount() {
     this.props.resetPortfolio();
   }
@@ -20,7 +24,7 @@ class HomeContainer extends React.Component {
     return (
       <Home portfolios={this.props.portfolios}
             portfolioCategory={this.props.portfolioCategory}
-            switchPortfolioCategory={this.props.switchPortfolioCategory}/>
+            handlePortfolioCategorySwitch={this.props.handlePortfolioCategorySwitch}/>
     );
   }
 }
@@ -34,16 +38,27 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    switchPortfolioCategory: (e) => {
+    handlePortfolioCategorySwitch: (e) => {
       e.preventDefault();
 
       let category = $(e.target).closest("a").attr('id');
       dispatch(portfolioActions.switchCategory(category));
     },
     resetPortfolio: () => {
-      dispatch(portfolioActions.resetPortfolio());
+      dispatch(portfolioActions.switchCategory('portfolio-category-all'));
     }
   };
+};
+
+HomeContainer.propTypes = {
+  portfolios: React.PropTypes.array,
+  portfolioCategory: React.PropTypes.string,
+  handlePortfolioCategorySwitch: React.PropTypes.func
+};
+
+HomeContainer.defaultProps = {
+  portfolios: [],
+  portfolioCategory: 'portfolio-category-all'
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

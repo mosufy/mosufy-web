@@ -1,4 +1,4 @@
-const portfolioCategory = (state = 'portfolio-category-all', action) => {
+const portfolioCategory = (state = '', action) => {
   switch (action.type) {
     case 'TOGGLE_CATEGORY':
       return action.category;
