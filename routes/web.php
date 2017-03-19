@@ -12,3 +12,4 @@
 */
 
 $app->get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
+$app->get('/{singlePageApplication:.+}', ['as' => 'home.singlePageApplication', 'uses' => 'HomeController@index']);
