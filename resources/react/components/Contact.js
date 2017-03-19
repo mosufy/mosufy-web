@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialIcon from './SocialIcon';
 
 class Contact extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -51,12 +52,10 @@ class Contact extends React.Component {
             </form>
             <div className="social">
               <ul>
-                <li><a href="https://www.facebook.com/mosufy"><i className="fa fa-facebook"/></a></li>
-                {/*<li><a href="#"><i className="fa fa-twitter"/></a></li>*/}
-                {/*<li><a href="#"><i className="fa fa-dribbble"/></a></li>*/}
-                <li><a href="https://www.github.com/mosufy"><i className="fa fa-github"/></a></li>
-                {/*<li><a href="#"><i className="fa fa-instagram"/></a></li>*/}
-                <li><a href="https://www.linkedin.com/in/mohdsufiyan"><i className="fa fa-linkedin"/></a></li>
+                <SocialIcon link="https://www.facebook.com/mosufy" faName="fa fa-facebook"/>
+                <SocialIcon link="https://www.github.com/mosufy" faName="fa fa-github"/>
+                <SocialIcon link="https://stackoverflow.com/users/2617503/mosufy" faName="fa fa-stack-overflow"/>
+                <SocialIcon link="https://www.linkedin.com/in/mohdsufiyan" faName="fa fa-linkedin"/>
               </ul>
             </div>
           </div>
