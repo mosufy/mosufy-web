@@ -11,9 +11,10 @@
  * $ node_modules/.bin/webpack --config=webpack/webpack.dll.js
  */
 
-var path = require("path");
-var webpack = require("webpack");
-var AssetsPlugin = require('assets-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const AssetsPlugin = require('assets-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = {
   context: path.resolve(__dirname),
@@ -26,6 +27,9 @@ module.exports = {
     library: "[name]"
   },
   plugins: [
+    new WebpackCleanupPlugin({
+      exclude: ['webpack.dll.manifest.json', 'vendor-manifest.json']
+    }),
     new webpack.DllPlugin({
       path: path.resolve(__dirname, '../public/js/dll/[name]-manifest.json'),
       name: "[name]"
@@ -43,7 +47,7 @@ module.exports = {
     }),
     new AssetsPlugin({
       filename: 'webpack.dll.manifest.json',
-      path: path.resolve(__dirname)
+      path: path.resolve(__dirname, '../public/js/dll')
     })
   ],
   resolve: {

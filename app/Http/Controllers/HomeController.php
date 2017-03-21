@@ -18,10 +18,10 @@ class HomeController extends Controller
     {
         try {
             // Get the correct hashed bundle JS file
-            $jsonBundle = json_decode(file_get_contents(base_path('webpack/webpack.' . app()->environment() . '.manifest.json')), true);
-            $bundleJS   = $jsonBundle['bundle']['js'];
+            $jsonBundle = json_decode(file_get_contents(base_path('public/js/bundle/' . app()->environment() . '/webpack.manifest.json')), true);
+            $bundleJS   = app()->environment() . '/' . $jsonBundle['bundle']['js'];
 
-            $jsonDll = json_decode(file_get_contents(base_path('webpack/webpack.dll.manifest.json')), true);
+            $jsonDll = json_decode(file_get_contents(base_path('public/js/dll/webpack.dll.manifest.json')), true);
             $dllJS   = $jsonDll['vendor']['js'];
         } catch (\Exception $e) {
             $bundleJS = 'bundle.js';

@@ -9,9 +9,10 @@
  * $ node_modules/.bin/webpack --config=webpack/webpack.config.js
  */
 
-var path = require("path");
-var webpack = require('webpack');
-var AssetsPlugin = require('assets-webpack-plugin');
+const path = require("path");
+const webpack = require('webpack');
+const AssetsPlugin = require('assets-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = {
   cache: true,
@@ -21,8 +22,8 @@ module.exports = {
   },
   devtool: 'eval',
   output: {
-    filename: '[name]-dev-[hash].js',
-    path: path.resolve(__dirname, '../public/js'),
+    filename: '[name]-[hash].js',
+    path: path.resolve(__dirname, '../public/js/bundle/dev'),
   },
   module: {
     rules: [
@@ -41,6 +42,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new WebpackCleanupPlugin({
+      exclude: ['webpack.manifest.json']
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'API_HOST': JSON.stringify('https://lumen-react.dev/v1'),
@@ -52,8 +56,8 @@ module.exports = {
       manifest: require('../public/js/dll/vendor-manifest.json')
     }),
     new AssetsPlugin({
-      filename: 'webpack.dev.manifest.json',
-      path: path.resolve(__dirname)
+      filename: 'webpack.manifest.json',
+      path: path.resolve(__dirname, '../public/js/bundle/dev')
     })
   ]
 };

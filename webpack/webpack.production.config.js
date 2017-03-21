@@ -9,9 +9,10 @@
  * $ node_modules/.bin/webpack --config=webpack/webpack.production.config.js
  */
 
-var path = require("path");
-var webpack = require('webpack');
-var AssetsPlugin = require('assets-webpack-plugin');
+const path = require("path");
+const webpack = require('webpack');
+const AssetsPlugin = require('assets-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = {
   cache: true,
@@ -21,8 +22,8 @@ module.exports = {
   },
   devtool: 'cheap-module-source-map',
   output: {
-    filename: '[name]-production-[hash].js',
-    path: path.resolve(__dirname, '../public/js'),
+    filename: '[name]-[hash].js',
+    path: path.resolve(__dirname, '../public/js/production'),
   },
   module: {
     rules: [
@@ -41,6 +42,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new WebpackCleanupPlugin({
+      exclude: ['webpack.manifest.json']
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -58,8 +62,8 @@ module.exports = {
       manifest: require('../public/js/dll/vendor-manifest.json')
     }),
     new AssetsPlugin({
-      filename: 'webpack.production.manifest.json',
-      path: path.resolve(__dirname)
+      filename: 'webpack.manifest.json',
+      path: path.resolve(__dirname, '../public/js/bundle/dev')
     })
   ]
 };
