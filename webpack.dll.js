@@ -8,7 +8,10 @@
  * @copyright Copyright (c) Mosufy
  *
  * To generate new dll file, simply run this command
- * $ node_modules/.bin/webpack --config=webpack/webpack.dll.js
+ *
+ * ```
+ * yarn run build-dll     # bundle vendor
+ * ```
  */
 
 const path = require("path");
@@ -22,24 +25,20 @@ module.exports = {
     vendor: ['./vendors.js']
   },
   output: {
-    path: path.resolve(__dirname, '../public/js/dll'),
+    path: path.resolve(__dirname, './public/js/dll'),
     filename: "dll.[name]-[hash].js",
     library: "[name]"
   },
   plugins: [
     new WebpackCleanupPlugin({
-      exclude: ['webpack.dll.manifest.json', 'vendor-manifest.json']
+      exclude: ['webpack.dll.manifest.json']
     }),
     new webpack.DllPlugin({
-      path: path.resolve(__dirname, '../public/js/dll/[name]-manifest.json'),
+      path: path.resolve(__dirname, './[name]-manifest.json'),
       name: "[name]"
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env':{
         'NODE_ENV': JSON.stringify('production')
@@ -47,13 +46,7 @@ module.exports = {
     }),
     new AssetsPlugin({
       filename: 'webpack.dll.manifest.json',
-      path: path.resolve(__dirname, '../public/js/dll')
+      path: path.resolve(__dirname, './public/js/dll')
     })
-  ],
-  resolve: {
-    modules: [
-      path.join(__dirname, "public"),
-      "node_modules"
-    ]
-  }
+  ]
 };

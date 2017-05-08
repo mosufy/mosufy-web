@@ -2,7 +2,11 @@
   "private": true,
   "scripts": {
     "prod": "gulp --production",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "build": "./buildBundle.sh",
+    "build-dev": "./buildBundle.sh dev",
+    "build-prod": "./buildBundle.sh prod",
+    "build-dll": "./buildDll.sh"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.0",
@@ -13,11 +17,13 @@
     "babel-preset-stage-0": "^6.16.0",
     "bootstrap": "^3.3.7",
     "css-loader": "^0.25.0",
+    "dotenv-webpack": "^1.4.5",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",
     "style-loader": "^0.13.1",
+    "unminified-webpack-plugin": "^1.2.0",
     "webpack": "^2.2.1",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dev-middleware": "^1.10.1",

@@ -6,15 +6,19 @@
  * @copyright Copyright (c) Mosufy
  *
  * To generate new dll file, simply run this command
- * $ node_modules/.bin/webpack --config=webpack/webpack.dll.js
+ * $ yarn run build-dll
  */
 
+require("axios");
+require("ladda");
 require("lodash/throttle");
+require("path");
 require("react");
+require("react-cookie");
 require("react-dom");
+require("react-ladda");
 require("react-redux");
 require("react-router");
 require("redux");
+require("redux-form");
 require("redux-thunk");
-require("react-ladda");
-require("axios");
